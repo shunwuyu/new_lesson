@@ -1,0 +1,1 @@
+npx babel src --out-dir lib --plugins=@babel/plugin-transform-spread

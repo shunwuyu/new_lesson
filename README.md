@@ -1,2 +1,2 @@
-# new_lesson
-新的课程
+/leetcode/141
+/algorithm/LRU

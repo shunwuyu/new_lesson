@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  var a_game = function(pNum){
+    var players = [];
+    for(var i=1;i<=pNum;i++){ // 生成环
+      players.push(i);
+    }
+    var flag=0; // 一次是否完成， 都记住
+    while(players.length>1){
+      // outPlayerNum在里面定义
+      var outPlayerNum = 0,len=players.length;
+      for(var i=0;i<len;i++){
+        flag++;
+        if(flag==5){  
+          flag=0;
+          console.log(i, '--------------', outPlayerNum);
+          // 本次有可能出去的
+          document.writeln("出局:"+players[i-outPlayerNum]);
+          players.splice(i-outPlayerNum,1);
+          outPlayerNum++;
+        } 
+      }
+    }
+    return players[0];
+  };
+document.writeln("<br/>剩下:"+a_game(12));
+  </script>
+</body>
+</html>
