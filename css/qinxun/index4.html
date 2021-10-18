@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  body,
+    html {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    body {
+      box-sizing: border-box;
+    }
+
+    .content {
+      padding: 10px;
+      transition: background-color 1s, color 1s;
+    }
+
+    #modeCheckBox {
+      display: none;
+    }
+
+    #modeCheckBox:checked+.content {
+      background-color: black;
+      color: white;
+      transition: all 1s;
+    }
+
+    #modeBtn {
+      font-size: 2rem;
+      float: right;
+    }
+
+    #modeBtn::after {
+      content: '🌞';
+    }
+
+    #modeCheckBox:checked+.content #modeBtn::after {
+      content: '🌜';
+    }
+  </style>
+</head>
+<body>
+  <input id="modeCheckBox" type="checkbox">
+  <div class="content">
+    <header>
+      <label id="modeBtn" for="modeCheckBox"></label>
+      <h1>YK菌的博客写的特别不错~</h1>
+    </header>
+
+    <main>
+      <div class="pic">
+        <img src="https://sf1-ttcdn-tos.pstatp.com/img/user-avatar/154b55eb36c8ae10f701e2d3d6cfb138~300x300.image">
+      </div>
+      <div class="description">
+        <p>
+          这里就是YK菌的博客啦，我之前是在C站写博客的，后来参加了青训营的活动，转来了掘金，社区很好~很多活动~以后常来掘金啦~~
+          <hr />
+          之前的博客和现在的一样，都是一些笔记之类的，我是前端新人，先以记笔记为主吧~~把笔记记好，慢慢拓展~
+          <hr />
+          <strong>YK菌</strong>，冲啊~~~~
+        </p>
+      </div>
+    </main>
+  </div>
+  
+</body>
+</html>
