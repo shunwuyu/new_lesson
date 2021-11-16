@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  /* 
+    div[class=box]  11
+    .box  10
+
+    div .box div[class=box]  一样
+    id 选择器，如 #app 100 
+    class、attribute 与 pseudo-classes 选择器，如 .header、[type="radio"] 10 与 :hover
+    type 标签选择器和伪元素选择器，如 h1、p 和 ::before 1
+  */
+
+  div:not(.outer) p {
+    color: blueviolet;
+  }
+
+  div.outer p {
+    color: orange;
+  }
+  
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <p>This is in the outer div.</p>
+    <div class="inner">
+      <p>This text is in the inner div.</p>
+    </div>
+  </div>
+</body>
+</html>

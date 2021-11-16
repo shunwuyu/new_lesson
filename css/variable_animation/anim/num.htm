@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  .box-item {
+    position: relative;
+    display: inline-block;
+    width: 54px;
+    height: 82px;
+    /* 背景图片 */
+    background: url(https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2019/7/28/16c3793e9ec889f4~tplv-t2oaga2asx-watermark.awebp) no-repeat center center;
+    background-size: 100% 100%;
+    font-size: 62px;
+    line-height: 82px;
+    text-align: center;
+    color: yellow;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+  }
+  .box-item span {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 10px;
+  }
+
+  </style>
+</head>
+<body>
+  <div class="box">
+    <p class="box-item">
+      <span id="number">1</span>
+    </p>
+  </div>
+  <script>
+  setInterval(() => {
+    let number = document.getElementById('number')
+    let random = getRandomNumber(0,10)
+    number.style.transform = `translate(-50%, -${random * 10}%)`
+  }, 200)
+  function getRandomNumber (min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min)
+  }
+
+  </script>
+</body>
+</html>

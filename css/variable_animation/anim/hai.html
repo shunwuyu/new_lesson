@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  .figure {
+    width: 160px;
+    height: 170px;
+    margin: 100px auto;
+    background: url(https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2019/8/19/16ca7163425d204d~tplv-t2oaga2asx-watermark.awebp) no-repeat 0 0;
+  }
+  .figure:hover {
+      animation: fly 1s steps(12) both infinite;
+      -webkit-animation: fly 1s steps(12) both infinite;
+  }
+  @keyframes fly {
+      0% {
+          background-position: 0 0;
+      }
+      100% {
+          background-position: -1920px 0;
+      }
+  }
+
+
+  </style>
+</head>
+<body>
+  <div class="figure"></div>
+</body>
+</html>

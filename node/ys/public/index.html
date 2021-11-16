@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>压缩图片</title>
+    <style>
+        h3{ text-align: center; }
+        #progress { height: 20px; width: 500px; margin: 10px 0; border: 1px solid gold; position: relative; }
+        #progress .progress-item { height: 100%; position: absolute; left: 0; top: 0; background: chartreuse;  transition: width .3s linear; }
+        .imgdiv{ width: 400px; text-align: center; display: none; }
+        .imgdiv img{ width: 100%; }
+</style>
+</head>
+<body>
+    <h3>压缩图片</h3>
+    <input type="file" id="file" accept="image/*">
+    <div style="margin: 5px 0;">上传进度：</div>
+    <div id="progress">
+        <div class="progress-item"></div>
+    </div>
+    <p class="status" style="display: none;"></p>
+    <div class="imgdiv">
+        <img src="" alt="" class="imgbox">
+    </div>
+    <div class="bbt">
+        <button class="btn" style="display: none;">压缩</button>
+    </div>
+</body>
+<script>
+    //上传图片
+    document.querySelector("#file").addEventListener("change", function () {
+        var file = document.querySelector("#file").files[0];
+        var formdata = new FormData();
+        formdata.append("file", file);
+        var xhr = new XMLHttpRequest();
+        xhr.open("post", "http://localhost:6300/uploadPic/");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                document.querySelector('.btn').style.display = "block";
+                document.querySelector('.status').style.display = "block";
+                document.querySelector('.status').innerText=xhr.responseText
+            }
+        }
+        xhr.upload.onprogress = function (event) {
+            if (event.lengthComputable) {
+                var percent = event.loaded / event.total * 100;
+                document.querySelector("#progress .progress-item").style.width = percent + "%";
+            }
+        }
+        xhr.send(formdata);
+    });
+    // 压缩图片
+    document.querySelector('.btn').onclick = function () {
+        document.querySelector('.status').innerText='等待中......'
+        var xhr = new XMLHttpRequest();
+        xhr.open("get", "http://localhost:6300/zipimg/");
+        xhr.send();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                document.querySelector('.imgdiv').style.display = "block";
+                document.querySelector('.status').innerText='压缩成功'
+                document.querySelector(".imgbox").setAttribute('src', './images/' + xhr.responseText)
+                document.querySelector('.btn').style.display = "none";
+            }
+        }
+    }
+</script>
+
+</html>

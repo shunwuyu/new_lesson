@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  /* 如何居中
+  如何让一个浮动元素居中？
+  如何让一个定位元素居中中
+   */
+  
+  * {margin: 0; padding: 0;}
+  /* .box {
+    margin: 0 auto;
+    width: 100px;
+    height: 100px;
+    background: pink;
+    float: left;
+  }
+  .content {
+    width: 100px;
+    margin: 0 auto;
+  } */
+  .content {
+    width: 100px;
+    height: 100px;
+    background: pink;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+ }
+
+  </style>
+</head>
+<body>
+  <div class="content">
+    <div class="box"></div>
+  </div>
+</body>
+</html>

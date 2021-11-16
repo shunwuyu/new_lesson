@@ -1,0 +1,24 @@
+{
+  "name": "pc",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev-t": "ts-node ./src/crawler.ts",
+    "dev-c": "ts-node ./src/combination/crawler.ts",
+    "dev-s": "ts-node ./src/singleton/crawler.ts"
+  },
+  "keywords": [],
+  "author": "shunwuyu <shunwu2001@163.com> (http://github.com/shunwuyu)",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/cheerio": "^0.22.30",
+    "@types/superagent": "^4.1.13",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "superagent": "^6.1.0"
+  }
+}

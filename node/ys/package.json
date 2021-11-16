@@ -1,0 +1,20 @@
+{
+  "name": "ys",
+  "version": "0.1.0",
+  "description": "[source](https://mp.weixin.qq.com/s/K9PG9WonQimQ2BI0Bd_VGg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "shunwuyu <shunwu2001@163.com> (http://github.com/shunwuyu)",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.13.4",
+    "koa-body": "^4.2.0",
+    "koa-router": "^10.1.1",
+    "koa-static": "^5.0.0",
+    "koa2-cors": "^2.0.6",
+    "tinify": "^1.6.1"
+  }
+}
