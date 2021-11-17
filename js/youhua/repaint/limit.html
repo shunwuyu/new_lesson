@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <!-- 有三个样式属性被修改了，每一个都会影响元素的几何结构，引起回流。当然，大部分现代浏览器都对其做了优化，因此，只会触发一次重排。但是如果在旧版的浏览器或者在上面代码执行的时候，有其他代码访问了布局信息(上文中的会触发回流的布局信息)，那么就会导致三次重排。 -->
+    const el = document.getElementById('test');
+    el.style.padding = '5px';
+    el.style.borderLeft = '1px';
+    el.style.borderRight = '2px';
+    - 优化一
+    const el = document.getElementById('test');
+    el.style.cssText += 'border-left: 1px; border-right: 2px; padding: 5px;';
+    - 优化二
+    const el = document.getElementById('test');
+    el.className += ' active';
+</body>
+</html>

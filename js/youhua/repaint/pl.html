@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    批量修改DOM VDOM
+    - 使元素脱离文档流  回流
+    - 对其进行多次修改 // 不会 不在渲染树
+    - 将元素带回到文档中。   回流
+
+    方式 
+    - 隐藏元素，应用修改，重新显示
+    - 使用文档片段(document fragment)在当前DOM之外构建一个子树，再把它拷贝回文档。
+    - 将原始元素拷贝到一个脱离文档的节点中，修改节点后，再替换原始的元素。
+
+    function appendDataToElement(appendToElement, data) {
+      let li;
+      for (let i = 0; i < data.length; i++) {
+        li = document.createElement('li');
+          li.textContent = 'text';
+          appendToElement.appendChild(li);
+      }
+  }
+  
+  const ul = document.getElementById('list');
+  appendDataToElement(ul, data);
+  
+
+  function appendDataToElement(appendToElement, data) {
+    let li;
+    for (let i = 0; i < data.length; i++) {
+    	li = document.createElement('li');
+        li.textContent = 'text';
+        appendToElement.appendChild(li);
+    }
+}
+const ul = document.getElementById('list');
+ul.style.display = 'none';
+appendDataToElement(ul, data);
+ul.style.display = 'block';
+
+
+const ul = document.getElementById('list');
+const fragment = document.createDocumentFragment();
+appendDataToElement(fragment, data);
+ul.appendChild(fragment);
+
+const ul = document.getElementById('list');
+const clone = ul.cloneNode(true);
+appendDataToElement(clone, data);
+ul.parentNode.replaceChild(clone, ul);
+
+
+
+
+</body>
+</html>
