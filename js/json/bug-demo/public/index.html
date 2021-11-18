@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <form action="/card" method="post" name="cardForm">
+      <div class="form-group">
+        <label for="exampleInputEmail1">兑换卡类型</label>
+        <input type="text" class="form-control"  name="539"
+        placeholder="请问你的兑换卡类型是">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">推荐人</label>
+        <input type="text" class="form-control"  
+        placeholder="请问推荐人是" name="540">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">地址</label>
+        <input type="text" class="form-control" 
+        placeholder="地址是" name="546">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </div>
+  <script>
+    let signInfo = [
+      {
+        fieldId: 539,
+        value: undefined
+      },
+      {
+        fieldId: 540,
+        value: undefined
+      },
+      {
+        fieldId: 546,
+        value: undefined
+      },
+    ]
+  const oForm = document.forms['cardForm'];
+  oForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const formData = new FormData(this);
+    console.log(formData)
+    for (const formElement of formData) {
+      console.log(formElement);
+      // console.log(formElement[0]);
+      // console.log(signInfo)
+      for (let item of signInfo) {
+        if (item.fieldId == formElement[0] && formElement[1]) {
+          item.value = formElement[1]
+        }
+      }
+    }
+    
+    // let newSignInfo = signInfo.map((it) => {
+    //   const value = typeof it.value === 'undefined' ? '' : it.value
+    //   return {
+    //     ...it,
+    //     value
+    //   }
+    // })
+
+
+ 
+    // let str=JSON.stringify(newSignInfo);
+    // console.log(encodeURIComponent(str));
+    let str = JSON.stringify(signInfo, (key, value) => typeof value === 'undefined' ? '' : value)
+    
+    fetch(`/card?data=${str}`)
+      .then(data => data.json())
+      .then(data => {
+        console.log(data);
+      })
+    // console.log(JSON.stringify(signInfo));
+  }, false);
+  
+  // console.log(JSON.stringify(signInfo))
+  </script>
+</body>
+</html>
