@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  input[type="file"] {
+    display: none;
+  }
+  #upload-button {
+    padding: 6px 25px;
+    background: #00bfff;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+  }
+  </style>
+</head>
+<body>
+    <button id="upload-button">
+    点击上传
+    <input type="file" title="上传小于5M的文件" id="upload-input"/>
+    </button>
+    <style>
+    </style>
+    <script>
+    let uploadbutton = document.getElementById("upload-button");
+    let uploadInput = document.getElementById("upload-input");
+    uploadbutton.onclick = function () {
+      uploadInput.click();
+    };
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  .box {
+    background-color: pink;
+    width: 200px;
+    height: 200px;
+    /* box-shadow: 0 8px 10px 0px black ; */
+    /* box-shadow: 0 8px 10px -10px black ; 相互抵消， 只在一个方向上显示*/
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px,
+     rgba(240, 46, 170, 0.3) 10px 10px, 
+     rgba(240, 46, 170, 0.2) 15px 15px, 
+     rgba(240, 46, 170, 0.1) 20px 20px, 
+     rgba(240, 46, 170, 0.05) 25px 25px;
+  }
+  </style>
+</head>
+<body>
+  <div class="box">box-shadow</div>
+</body>
+</html>

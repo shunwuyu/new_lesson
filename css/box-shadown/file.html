@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* https://juejin.cn/post/7031194966474883102 */
+  /* 基础真的差！！！ */
+  input[type="file"]{
+    color: red;
+    padding: 20px;
+  }
+
+  .upload-container {
+    position: relative;
+    width: 150px;
+    text-align: center;
+  }
+
+  .upload-container p {
+    z-index: 0;
+    width: 100%;
+    background: #00bfff;
+    color: #fff;
+    padding: 10px 0;
+    font-size: 12px;
+  }
+  .upload-container input {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+  </style>
+</head>
+<body>
+  <input type="file" />
+  <div class="upload-container">
+    <p> 上传文件 </p>
+    <input
+        type="file"
+        class="upload"/>
+  </div>
+</body>
+</html>

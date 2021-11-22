@@ -43,6 +43,5 @@ const isCyclic = (obj) => {
 let cyclicObj = {
   name: '前端胖头鱼',
 }
-
 cyclicObj.obj = cyclicObj
 console.log(isCyclic(cyclicObj));

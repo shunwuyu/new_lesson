@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  .card{
+    position: relative;
+    width: 200px;
+    height: 200px;
+  }
+  .front,.back{
+    position: absolute;
+    top:0;left:0;
+    width: 100%;
+    height: 100%;
+    background-color:pink;
+  }
+  .front {
+    backface-visibility: hidden;
+    transition: transform 500ms linear;
+    transform: rotateY(0deg)
+  }
+  .back {
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transition: transform 300ms linear;
+  }
+  .card:hover .front {
+    transform: rotateY(-180deg);
+  }
+
+  .card:hover .back {
+    transform: rotateY(0deg);
+  }
+  </style>
+</head>
+<body>
+  <div class="card">
+      <div class="front">
+          <img src="1.png" />
+          <span class="name">半夏</span>
+      </div>
+      <div class="back">
+          <p>滕王高阁临江渚，佩玉鸣鸾罢歌舞。</p>
+          <p>画栋朝飞南浦云，珠帘暮卷西山雨。</p>
+          <p>闲云潭影日悠悠，物换星移几度秋。</p>
+          <p>阁中帝子今何在？槛外长江空自流。</p>
+      </div>
+      
+    </div>
+</body>
+</html>

@@ -33,3 +33,17 @@
   - 用户打开首页，在请求首页的时候，会带上上一步后端设置的Cookie，其中Cookie是请求头
   - 后端读Cookie，通过Cookie中的信息在数据库里找这个用户，并在页面相应位置显示用户信息
   
+
+- koa2原生功能只提供了cookie的操作，但是没有提供session操作
+  - 如果session数据量很小，可以直接存在内存中
+  - 如果session数据量很大，则需要存储介质存放session数据  redis 
+
+  将session存放在MySQL数据库中
+  需要用到中间件
+  koa-session-minimal 适用于koa2 的session中间件，提供存储介质的读写接口 。
+  koa-mysql-session 为koa-session-minimal中间件提供MySQL数据库的session数据读写操作。
+  将sessionId和对应的数据存到数据库
+  将数据库的存储的sessionId存到页面的cookie中
+  根据cookie的sessionId去获取对于的session信息
+
+  
