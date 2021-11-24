@@ -17,3 +17,4 @@
 - js/json
 - node/router
 - css/box-shadown
+- js/weakmap
