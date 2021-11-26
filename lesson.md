@@ -20,3 +20,4 @@
 - js/weakmap
 - js/promise
 - postcss/
+- react/clipboard-hooks
