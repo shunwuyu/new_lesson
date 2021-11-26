@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  let time = 0;
+  let showUserInfo = function (user) {
+    return getUserInfo().then(info => {
+        console.log('用户信息', info);
+        return true;
+    });
+  }
+  let getUserInfo = function (user) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => resolve('姓名：张鑫旭'), Math.floor(400 * Math.random()));
+    });
+  }
+  let timeout = function (delay, result) {
+    return new Promise(resolve => {
+        setTimeout(() => resolve(result), delay);
+    });
+  }
+  let showToast = function () {
+      time = +new Date()
+      console.log('show loading...');
+  }
+  let hideToast = function () {;
+      console.log('hide loading' + (+new Date() - time));
+  }
+  // 执行代码示意
+  let promiseUserInfo = showUserInfo();
+  Promise.race([promiseUserInfo, timeout(200)]).then((display) => {
+      if (!display) {
+          showToast();
+          
+          Promise.all([promiseUserInfo, timeout(200)]).then(() => {
+              hideToast();
+          });
+      }
+  });
+  </script>
+</body>
+</html>

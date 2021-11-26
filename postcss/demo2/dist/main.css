@@ -1,0 +1,45 @@
+/*!***********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/index.css ***!
+  \***********************************************************************************************************/
+._example_1bygy_1 {
+  display: grid;
+  transition: all 0.5s;
+  user-select: none;
+  background: linear-gradient(to bottom, white, black);
+}
+
+/*!***********************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/input.css ***!
+  \***********************************************************************************************************/
+:root {
+  --fontSize: 1rem;
+  --mainColor: rgba(18,52,86,0.47059);
+  --secondaryColor: rgba(102, 51, 153, 0.9);
+}
+
+@media (max-width: 50rem) {
+  body {
+    color: var(--mainColor);
+    font-family: system-ui;
+    font-size: var(--fontSize);
+    line-height: calc(var(--fontSize) * 1.5);
+    overflow-wrap: break-word;
+    padding-left: calc(var(--fontSize) / 2 + 1px);
+    padding-right: calc(var(--fontSize) / 2 + 1px);
+  }
+}
+
+/*!*******************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/m.css ***!
+  \*******************************************************************************************************/
+._grid_147oc_1 {
+  display: grid;
+  grid: repeat(2, 240px) / auto-flow 320px;
+  & > div {
+    background-color: #8ca0ff;
+    width: 200px;
+    height: 200px;
+    transition: 1s;
+  }
+}
+
