@@ -21,3 +21,4 @@
 - js/promise
 - postcss/
 - react/clipboard-hooks
+- react/ryf_react
