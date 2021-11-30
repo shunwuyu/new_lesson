@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  /* 横纵对调 */
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  </style>
+</head>
+<body>
+  <div class="box" style="width:9rem;height:9rem;background-color: green;"></div>
+  <script>
+  function setRemUnit () {
+    const docEl = document.documentElement;
+    var rem = docEl.clientWidth / 10
+    docEl.style.fontSize = rem + 'px';
+  }
+  setRemUnit();
+  </script>
+  <script>
+  window.addEventListener('resize', setRemUnit);
+  window.addEventListener('pageshow', function (e) {
+    if (e.persisted) {
+      setRemUnit()
+    }
+})
+
+  </script>
+</body>
+</html>
