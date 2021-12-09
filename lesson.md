@@ -23,3 +23,4 @@
 - react/clipboard-hooks
 - react/ryf_react
 - js/good_code
+- react/rona
