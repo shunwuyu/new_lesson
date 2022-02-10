@@ -24,3 +24,4 @@
 - react/ryf_react
 - js/good_code
 - react/rona
+- typescript/database
