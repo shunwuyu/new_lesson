@@ -25,3 +25,4 @@
 - js/good_code
 - react/rona
 - typescript/database
+- interview/bushu/
