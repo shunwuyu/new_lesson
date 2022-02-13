@@ -26,3 +26,4 @@
 - react/rona
 - typescript/database
 - interview/bushu/
+- interview/jihe/
