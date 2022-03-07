@@ -17,6 +17,7 @@
 - js/json
 - node/router
 - css/box-shadown
+- interview/clone
 - js/weakmap
 - js/promise
 - postcss/
