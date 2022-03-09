@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  .light {
+    color: yellow
+  }
+  </style>
+</head>
+<body>
+    <!-- 页面中有个表格，表格内容是根据后端的数据渲染出来的，表格头部有input表单元素，通过触发input事件实时搜索列表内容，重新渲染列表。
+      搜索出来的东西进行高亮
+    -->
+    <div id="old_ele">普京大帝</div>
+    <div  id="new_ele"></div>
+    <script>
+    const str = 'old_ele';
+    function formatSearch(origin, search) {
+      return origin.replace(new RegExp(search, 'ig'), function($1) {
+          return `<span class="light">${$1}</span>`;
+      });
+    }
+
+    new_ele.innerHTML = formatSearch('普京大帝', '大帝')
+
+    let world = 'hello word'
+    let reg = /(?<=\bhe)\w+/;
+    console.log(reg.exec(world)[0])
+
+    </script>
+</body>
+</html>
